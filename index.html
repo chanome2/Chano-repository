@@ -3,43 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Project</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: orange;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #btn {
+        width: 200px;
+        height: 70px;
+        border-width: 4px;
+        border-radius: 15px;
+        font-size: 25px;
+        font-weight: bold;
+        color: brown;
+        cursor: pointer;
+      }
+
+      #btn:hover {
+        background-color: black;
+        color: white;
+      }
+
+      #btn:active {
+        font-size: 16px;
+      }
+    </style>
   </head>
   <body>
-    <table>
-      <caption>
-        What is the difference between block, inline and inline-block
-      </caption>
-      <thead>
-        <tr>
-          <th colspan="3">/</th>
-          <th colspan="2">block</th>
-          <th>inline</th>
-          <th>inline-block</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th colspan="3">height determined</th>
-          <td colspan="5">by height of content</td>
-        </tr>
-        <tr>
-          <th colspan="3">width determined</th>
-          <td>by width of parent element</td>
-          <td colspan="3">by width of content</td>
-        </tr>
-        <tr>
-          <th colspan="3">Is it possible to set height and width</th>
-          <td colspan="2">yes</td>
-          <td>no</td>
-          <td colspan="2">yes</td>
-        </tr>
-        <tr>
-          <th colspan="3">How line wrapping works</th>
-          <td colspan="2">always on a new line</td>
-          <td colspan="3">only when filling the width of the parent element</td>
-        </tr>
-      </tbody>
-    </table>
+    <button id="btn" type="button" onclick="playSound()">HIT ME!</button>
+    <audio id="audio" src="./audio/audio-sample.mp3"></audio>
+    <script type="text/javascript">
+      var audio = document.getElementById('audio');
+
+      function playSound() {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    </script>
   </body>
 </html>
